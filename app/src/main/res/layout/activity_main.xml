@@ -5,153 +5,161 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
-        android:id="@+id/history"
-        android:layout_width="wrap_content"
+        android:id="@+id/display"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/numbers"
-        android:text="Placeholder"/>
-    <EditText
-        android:id="@+id/numbers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/history"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/eight"
-        android:hint="Placeholder"/>
+        android:textSize="70dp"
+        android:gravity="right"/>
     <Button
         android:id="@+id/delete"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/numbers"
+        app:layout_constraintTop_toBottomOf="@id/display"
         app:layout_constraintStart_toEndOf="@id/line_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/divide"
         android:text="@string/delete"
+        android:onClick="deleteCharacter"
         />
+
     <Button
         android:id="@+id/seven"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/numbers"
-        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="updateDisplay"
+        android:text="@string/seven"
         app:layout_constraintBottom_toTopOf="@id/four"
-        android:text="@string/seven"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display" />
     <Button
         android:id="@+id/eight"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/numbers"
+        app:layout_constraintTop_toBottomOf="@+id/display"
         app:layout_constraintStart_toEndOf="@id/seven"
         app:layout_constraintBottom_toTopOf="@id/five"
-        android:text="@string/eight"/>
+        android:text="@string/eight"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/nine"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/numbers"
+        app:layout_constraintTop_toBottomOf="@+id/display"
         app:layout_constraintStart_toEndOf="@id/eight"
         app:layout_constraintBottom_toTopOf="@id/six"
-        android:text="@string/nine"/>
+        android:text="@string/nine"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/divide"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/delete"
         app:layout_constraintStart_toEndOf="@id/line_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/multiply"
-        android:text="@string/divide"/>
+        android:text="@string/divide"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/four"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/seven"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/one"
-        android:text="@string/four"/>
+        android:text="@string/four"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/five"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/eight"
         app:layout_constraintStart_toEndOf="@id/four"
         app:layout_constraintBottom_toTopOf="@id/two"
-        android:text="@string/five"/>
+        android:text="@string/five"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/six"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/nine"
         app:layout_constraintStart_toEndOf="@id/five"
         app:layout_constraintBottom_toTopOf="@id/three"
-        android:text="@string/six"/>
+        android:text="@string/six"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/multiply"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/divide"
         app:layout_constraintStart_toEndOf="@id/line_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/minus"
-        android:text="@string/multiply"/>
+        android:text="@string/multiply"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/one"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/four"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/zero"
-        android:text="@string/one"/>
+        android:text="@string/one"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/two"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/five"
         app:layout_constraintStart_toEndOf="@id/one"
         app:layout_constraintBottom_toTopOf="@id/period"
-        android:text="@string/two"/>
+        android:text="@string/two"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/three"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/six"
         app:layout_constraintStart_toEndOf="@id/two"
         app:layout_constraintBottom_toTopOf="@id/equals"
-        android:text="@string/three"/>
+        android:text="@string/three"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/minus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/multiply"
         app:layout_constraintStart_toEndOf="@id/line_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/plus"
-        android:text="@string/minus"/>
+        android:text="@string/minus"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/zero"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/one"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/zero"/>
+        android:text="@string/zero"
+        android:onClick="updateDisplay"
+        />
     <Button
         android:id="@+id/period"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/two"
         app:layout_constraintStart_toEndOf="@id/zero"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/period"/>
+        android:text="@string/period"
+        android:onClick="updateDisplay"/>
     <Button
         android:id="@+id/equals"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/three"
         app:layout_constraintStart_toEndOf="@id/period"
@@ -159,21 +167,21 @@
         android:text="@string/equals"/>
     <Button
         android:id="@+id/plus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/minus"
         app:layout_constraintStart_toEndOf="@id/line_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/plus"/>
+        android:text="@string/plus"
+        android:onClick="updateDisplay" />
 
     <View
         android:id="@+id/line_separator"
-        android:layout_width="0dp"
+        android:layout_width="5dp"
         android:layout_height="0dp"
-        android:background="#FF0000FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/nine"
-        app:layout_constraintTop_toBottomOf="@id/numbers" />
+        app:layout_constraintTop_toBottomOf="@id/display" />
 
 </android.support.constraint.ConstraintLayout>
